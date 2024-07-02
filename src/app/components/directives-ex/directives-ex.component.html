@@ -1,0 +1,22 @@
+<h2>Directives :</h2>
+
+<h3>*ngIf Directive :</h3>
+<button (click)="showHide()" style="margin-bottom: 10px;">Show or Hide the below text</button><br>
+
+<div *ngIf = 'visibleStatus'>This is an example for ngIf directive (Structural Type) </div>
+
+
+<h3>*ngFor Directive :</h3>
+
+<div style="padding:20px;border: 1px solid gray;border-radius: 5px;">
+    <div *ngFor="let data of productData">
+        <div> <u><strong>Title</strong></u> : {{data.title}}</div>
+        <div> <u><strong>Type</strong></u> : {{data.type}}</div>
+        <div> <u><strong>Description</strong></u> : {{data.description}}</div>
+        <div> <u><strong>Price</strong></u> : {{data.price}}</div> <hr>
+    </div>
+</div>
+
+<h3>ngStyle(Attribute Type) Directive</h3>
+
+ <div id="myDiv" [ngStyle]="{'color': 'red'}"> Attribute Type Data Example</div>

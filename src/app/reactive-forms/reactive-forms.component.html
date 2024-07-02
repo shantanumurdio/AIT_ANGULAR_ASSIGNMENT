@@ -1,0 +1,70 @@
+<div>
+  <h3>Reactive Forms :</h3>
+  <hr>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstname">First Name </label>
+      <input type="text" id="firstname" name="firstname" formControlName="firstname">
+      <div *ngIf="contactForm.get('firstname')?.invalid && contactForm.get('firstname')?.touched" class="error-message">
+        <span *ngIf="contactForm.get('firstname')?.hasError('required')">First Name is required</span>
+        <span *ngIf="contactForm.get('firstname')?.hasError('minlength')">First Name must be at least 3 characters</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastname">Last Name </label>
+      <input type="text" id="lastname" name="lastname" formControlName="lastname">
+      <div *ngIf="contactForm.get('lastname')?.invalid && contactForm.get('lastname')?.touched" class="error-message">
+        <span *ngIf="contactForm.get('lastname')?.hasError('required')">Last Name is required</span>
+        <span *ngIf="contactForm.get('lastname')?.hasError('minlength')">Last Name must be at least 3 characters</span>
+        <span *ngIf="contactForm.get('lastname')?.hasError('maxlength')">Last Name should not exceed 10 characters</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email </label>
+      <input type="text" id="email" name="email" formControlName="email">
+      <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="error-message">
+        <span *ngIf="contactForm.get('email')?.hasError('required')">Email is required</span>
+        <span *ngIf="contactForm.get('email')?.hasError('email')">Invalid email format</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Gender </label>
+      <div>
+        <input type="radio" value="male" id="gender" name="gender" formControlName="gender">
+        <label for="male">Male</label>
+      </div>
+      <div>
+        <input type="radio" value="female" id="gender" name="gender" formControlName="gender">
+        <label for="female">Female</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="isMarried">Married </label>
+      <input type="checkbox" id="isMarried" name="isMarried" formControlName="isMarried">
+      <div *ngIf="contactForm.get('isMarried')?.invalid && contactForm.get('isMarried')?.touched" class="error-message">
+        <span *ngIf="contactForm.get('isMarried')?.hasError('required')">Married status is required</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="country">Country </label>
+      <select id="country" name="country" formControlName="country">
+        <option value="1">India</option>
+        <option value="2">USA</option>
+        <option value="3">England</option>
+        <option value="4">Singapore</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button type="submit">Submit</button> &nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="reset" (click)="reset()">Reset</button>
+    </div>
+  </form>
+
+  <pre *ngIf="data">{{data | json}}</pre>
+</div>

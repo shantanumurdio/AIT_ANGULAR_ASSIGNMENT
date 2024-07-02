@@ -1,0 +1,18 @@
+<h3>String Interpolation :</h3>
+<div>I'm {{fullName}}, from Texas.</div>
+
+<h3>Property Binding :</h3>
+<div>
+    <button [disabled]="isDisabled">This is Disabled!</button>
+</div>
+
+<h3>Event Binding :</h3>
+<div>
+    <button (click)="alertData()">Event Binding</button>
+</div>
+
+<h3>Two Way Data Binding :</h3>
+<div>
+    <div>User Name: <input type="text" [(ngModel)]="userName" ></div><br>
+    <div><b>Your Have Entered :</b> {{userName}}</div>
+</div>

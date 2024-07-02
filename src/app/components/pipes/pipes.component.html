@@ -1,0 +1,24 @@
+<!-- src/app/pipes/pipes.component.html -->
+<h3>Upper Case Pipe :</h3>
+<div>{{title | uppercase}}</div>
+
+<h3>Lower Case Pipe :</h3>
+<div>{{lowercaseTitle | lowercase}}</div>
+
+<h3>Title Case Pipe :</h3>
+<div>{{lowercaseTitle | titlecase}}</div>
+
+<h3>Currency Pipe :</h3>
+<div>{{price | currency:'EUR':true}}</div>
+
+<h3>Date Pipe :</h3>
+<div>{{date | date: 'dd/MM/yyyy'}}</div>
+    
+<h3>Percent Pipe :</h3>
+<div>{{number | percent}}</div>
+
+<h3>Decimal Pipe :</h3>
+<div>{{number | number:'1.2-2'}}</div> 
+
+<h3>Full Name :</h3>
+<div>{{fullName | uppercase}}</div> 
